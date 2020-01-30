@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "style.css") }}>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+</head>
+<body>
+{% if name != session['user'] %}
+<p>Account name doesn't match to your cookie. Please Log In again</p>
+<a href={{ url_for('login_user') }}>Log In</a>
+
+{% else %}
+<h2>Hello, {{ name }}!</h2>
+
+<ol>
+    {% for task in tasks %}
+    <li>{{ task[2] }} - {{ task[4] }}</li>
+    {% endfor %}
+</ol>
+
+<form method="POST">
+    <label>Title</label>
+    <input type="text" name="title" maxlength="40" required>
+    <label>Description</label>
+    <input type="text" name="content">
+    <label>Done before</label>
+    <input type="date" name="end_date">
+    <input type="submit" value="Add Task!">
+</form>
+
+<a href={{ url_for('logout') }}>Log Out</a>
+{% endif %}
+</body>

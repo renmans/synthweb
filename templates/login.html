@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "style.css") }}>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+</head>
+<body>
+<form method="POST">
+    <div>
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+    </div>
+    
+    <div>
+        <label>Password</label>
+        <input type="password" name="pw" required>  
+    </div>
+    
+    <div>
+        <label>Remember Me</label>
+        <input type="checkbox" name="remember">
+    </div>
+
+    <div>
+        <input type="submit" value="Send">
+    </div>
+    
+</form>
+
+<a href={{ url_for('index') }}>I wanna Sign Up</a>
+</body>
