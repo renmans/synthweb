@@ -11,14 +11,14 @@ body {
     color: white;
     background: url("https://w.wallhaven.cc/full/39/wallhaven-39y7vy.jpg");
     background-size: 100%;
-    background-repeat:no-repeat;
+    background-repeat: repeat-y;
 }
 
 form {
     background-color: rgb(173, 173, 173);
     width: 15%;
     margin: 0 auto;
-    margin-top: 20%;
+    margin-top: 10px;
     padding: 0px;
     padding-bottom: 0px;
     border: 3px solid black;

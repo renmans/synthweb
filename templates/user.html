@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "style.css") }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "user.css") }}>
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 </head>
@@ -11,22 +12,39 @@
 {% else %}
 <h2>Hello, {{ name }}!</h2>
 
-<ol>
-    {% for task in tasks %}
-    <li>{{ task[2] }} - {{ task[4] }}</li>
-    {% endfor %}
-</ol>
 
+{% for task in tasks %}
+    <div class="card">
+        <div class="card-img"></div>
+        <p class="card-heading">{{ task[2] }}</p>
+        {% if task[2] %}
+        <p class="card-style card-content">"{{ task[3] }}"</p>
+        {% endif %}
+        <p class="card-style card-start-date">Created on: {{ task[4] }}</p>
+        {% if task[5] %}
+        <p class="card-style card-end-date">Deadline: {{ task[5] }}</p>
+        {% endif %}
+        <div class="card-buttons">
+            <button class="card-buttons-style send status-btn">Change status</button>
+            <button class="card-buttons-style send change-btn">Change Details</button>
+            <button class="card-buttons-style send delete-btn">Delete</button>
+        </div>
+    </div>
+{% endfor %}
+
+<div class="form-post">
 <form method="POST">
     <label>Title</label>
     <input type="text" name="title" maxlength="40" required>
     <label>Description</label>
     <input type="text" name="content">
     <label>Done before</label>
-    <input type="date" name="end_date">
-    <input type="submit" value="Add Task!">
+    <input type="date" class="date" name="end_date">
+    <div class = "submit-btn">
+        <input type="submit" class="send submit-button" value="Add Task!">
+    </div>
+    <a href={{ url_for('logout') }}>Log Out</a>
 </form>
-
-<a href={{ url_for('logout') }}>Log Out</a>
+</div>
 {% endif %}
 </body>

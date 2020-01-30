@@ -1,0 +1,55 @@
+p {
+    border: 0;
+}
+
+.card {
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: rgb(173, 173, 173);
+    width: 30%;
+    border: 3px solid black;
+}
+
+.card-heading {
+    margin-top: 0;
+    text-align: center;
+    background-color: blue;
+}
+
+.card-style {
+    text-align: center;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.date {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form {
+    text-align: center;
+}
+
+.send{
+    background-color: rgb(170, 170, 170);
+    margin-top: 20px;
+}
+
+.submit-btn{
+    margin: 0 10px;
+    margin-bottom: 0px;
+}
+
+.submit-button{
+    padding: 5px 0;
+    margin: 0px;
+}
+
+a {
+    margin: 0px;
+}
