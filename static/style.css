@@ -1,73 +1,78 @@
 * {
-    /*border: 1px solid;*/
-    display: block;
-    font-family: 'Orbitron', sans-serif;
-    font-family: 'Press Start 2P', cursive;
-    }
+  /*border: 1px solid;*/
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Press Start 2P", cursive;
+}
 
 body {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background: url("https://w.wallhaven.cc/full/39/wallhaven-39y7vy.jpg");
-    background-size: 100%;
-    background-repeat: repeat-y;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: url("https://w.wallhaven.cc/full/39/wallhaven-39y7vy.jpg");
+  background-size: 100%;
+  background-repeat: repeat-y;
 }
 
 form {
-    background-color: rgb(173, 173, 173);
-    width: 15%;
-    margin: 0 auto;
-    margin-top: 10px;
-    padding: 0px;
-    padding-bottom: 0px;
-    border: 3px solid black;
-    /*border-radius: 10%;*/
+  background-color: rgb(173, 173, 173);
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 0px;
+  padding-bottom: 0px;
+  border: 3px solid black;
+  /*border-radius: 10%;*/
 }
 
 .fields {
-    margin: 10px;
+  margin: 10px;
 }
 
 #id {
-    padding: 2px;
+  padding: 2px;
 }
 
 form * {
-    margin: 0px;
-    
+  margin: 0px;
 }
-input{
-    width: 100%;
-    margin: 2px 0 6px 0;
-    padding-left: 4px;
-    margin: 0px;
-}
-
-label{
-    padding: 4px;
+input {
+  width: 100%;
+  margin: 2px 0 6px 0;
+  padding-left: 4px;
+  margin: 0px;
 }
 
-h2,a{
-    padding: 6px;
-    text-align: center;
+label {
+  padding: 4px;
 }
 
-a{
-    color: red;
-    margin-top: 15px;
-    font-size: 10px;
-    text-decoration: none;
-    margin-bottom: 10px;
+h2,
+a {
+  padding: 6px;
+  text-align: center;
+}
+
+a {
+  color: red;
+  margin-top: 15px;
+  font-size: 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 #send {
-    background-color: rgb(170, 170, 170);
-    margin-top: 20px;
+  background-color: rgb(170, 170, 170);
+  margin-top: 20px;
 }
 
 h2 {
-    margin-top: 0px;
-    margin-bottom: 5px;
-    background-color: blue;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  background-color: blue;
+}
+
+/*временное решение (исправить на бэкенде) */
+title {
+  opacity: 0;
 }
