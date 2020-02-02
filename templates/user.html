@@ -26,9 +26,9 @@
         <p class="card-style card-end-date">Deadline: {{ task[5] }}</p>
         {% endif %}
         <div class="card-buttons">
-            <button class="card-buttons-style send status-btn">Change status</button>
-            <button class="card-buttons-style send change-btn">Change Details</button>
-            <button class="card-buttons-style send delete-btn">Delete</button>
+            <button class="disabled-button normal-button card-buttons card-style send">Change status</button>
+            <button class="disabled-button normal-button card-buttons card-style send">Change Details</button>
+            <button class="disabled-button normal-button card-buttons card-style send">Delete</button>
         </div>
     </div>
 {% endfor %}
@@ -42,7 +42,7 @@
     <label>Done before</label>
     <input type="date" class="date" name="end_date">
     <div class = "submit-btn">
-        <input type="submit" class="send submit-button" value="Add Task!">
+        <input type="submit" class="default-button send submit-button" value="Add Task!">
     </div>
     <a href={{ url_for('logout') }}>Log Out</a>
 </form>

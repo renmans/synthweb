@@ -36,6 +36,7 @@ form {
 form * {
   margin: 0px;
 }
+
 input {
   width: 100%;
   margin: 2px 0 6px 0;
@@ -47,8 +48,7 @@ label {
   padding: 4px;
 }
 
-h2,
-a {
+h2, a {
   padding: 6px;
   text-align: center;
 }
@@ -72,7 +72,31 @@ h2 {
   background-color: blue;
 }
 
-/*временное решение (исправить на бэкенде) */
+/* temporary solution *
+ * backend problem    */
 title {
   opacity: 0;
+}
+
+.default-button {
+  background-color: rgb(170, 170, 170);
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+}
+
+.normal-button {
+  background-color: rgb(170, 170, 170);
+  margin-bottom: 2px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.disabled-button {
+  /* inherited from a normal-button class  *
+   * class="disabled-button normal-button" */
+  color: gray;
 }
