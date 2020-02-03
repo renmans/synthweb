@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from db import add_user, login, get_user_id, add_task, get_tasks, change_task_status
+from db import add_user, login, get_user_id, add_task, get_tasks, change_task_status, delete_task
 from sqlite3 import IntegrityError
 
 app = Flask(__name__)
@@ -59,6 +59,13 @@ def change(card_id):
     if request.method == 'POST':
         username = request.headers['Referer'].split('/')[-1]
         change_task_status(username, card_id)
+    return '200 OK'
+
+@app.route('/delete/<card_id>', methods=['GET', 'POST'])
+def delete(card_id):
+    if request.method == 'POST':
+        username = request.headers['Referer'].split('/')[-1]
+        delete_task(username, card_id)
     return '200 OK'
 
 app.run(debug=True)

@@ -1,5 +1,6 @@
 <head>
-	<title>SynthWeb - {{ name }}</title>
+    <title>SynthWeb - {{ name }}</title>
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "style.css") }}>
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "user.css") }}>
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
@@ -38,7 +39,8 @@
             <button class="normal-button card-buttons card-style send complete-btn" 
             onclick=change_status(event)>Change status</button>
             <button class="disabled-button normal-button card-buttons card-style send edit-btn">Edit</button>
-            <button class="disabled-button normal-button card-buttons card-style send delete-btn">Delete</button>
+            <button class="normal-button card-buttons card-style send delete-btn"
+            onclick=delete_task(event)>Delete</button>
         </div>
     </div>
     </div>
@@ -64,8 +66,8 @@
 <!-- </div> -->
 {% endif %}
     <script>
-        function fetch_post(card_id) {
-            fetch('/change/' + card_id, {
+        function fetch_post(card_id, route_url) {
+            fetch('/' + route_url + '/' + card_id, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 data: JSON.stringify(card_id)
@@ -74,10 +76,17 @@
 
         function change_status(event) {
             let card_id = event.target.parentNode.parentNode.parentNode.id;
-            fetch_post(card_id);
+            fetch_post(card_id, 'change');
         }
+
+        function delete_task(event) {
+            let card_id = event.target.parentNode.parentNode.parentNode.id;
+            fetch_post(card_id, 'delete')
+        }
+
         function showForm() {
             let form = document.querySelector('form');
-            form.style.display = (form.style.display == 'none') ? 'block' : 'none';        }
+            form.style.display = (form.style.display == 'none') ? 'block' : 'none';
+        }
     </script>
 </body>
