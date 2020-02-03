@@ -1,8 +1,8 @@
 <head>
     <title>SynthWeb - {{ name }}</title>
     <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "style.css") }}>
-    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "user.css") }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/style.css") }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/user.css") }}>
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 </head>
@@ -65,28 +65,5 @@
 </form>
 <!-- </div> -->
 {% endif %}
-    <script>
-        function fetch_post(card_id, route_url) {
-            fetch('/' + route_url + '/' + card_id, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                data: JSON.stringify(card_id)
-            }).then(response => console.log(response));
-        }
-
-        function change_status(event) {
-            let card_id = event.target.parentNode.parentNode.parentNode.id;
-            fetch_post(card_id, 'change');
-        }
-
-        function delete_task(event) {
-            let card_id = event.target.parentNode.parentNode.parentNode.id;
-            fetch_post(card_id, 'delete')
-        }
-
-        function showForm() {
-            let form = document.querySelector('form');
-            form.style.display = (form.style.display == 'none') ? 'block' : 'none';
-        }
-    </script>
+    <script src="../static/js/script.js"></script>
 </body>

@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   color: white;
-  background: url('img/background.jpg');
+  background: url('../img/background.jpg');
   background-size: 100%;
   background-repeat: repeat-y;
 }
