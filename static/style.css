@@ -9,14 +9,14 @@ body {
   display: flex;
   flex-direction: column;
   color: white;
-  background: url("https://w.wallhaven.cc/full/39/wallhaven-39y7vy.jpg");
+  background: url('background.jpg');
   background-size: 100%;
   background-repeat: repeat-y;
 }
 
 form {
   background-color: rgb(173, 173, 173);
-  width: 15%;
+  width: auto;
   margin: 0 auto;
   margin-top: 10px;
   padding: 0px;
@@ -26,7 +26,8 @@ form {
 }
 
 .fields {
-  margin: 10px;
+  margin: auto;
+  
 }
 
 #id {
@@ -35,6 +36,7 @@ form {
 
 form * {
   margin: 0px;
+  padding: 5px;
 }
 
 input {
@@ -44,9 +46,6 @@ input {
   margin: 0px;
 }
 
-label {
-  padding: 4px;
-}
 
 h2, a {
   padding: 6px;
@@ -72,10 +71,8 @@ h2 {
   background-color: blue;
 }
 
-/* temporary solution *
- * backend problem    */
-title {
-  opacity: 0;
+title, script {
+  display: none;
 }
 
 .default-button {
@@ -84,6 +81,7 @@ title {
   border-left: 2px solid black;
   border-bottom: 4px solid black;
   border-right: 4px solid black;
+  align-content: center;
 }
 
 .normal-button {
@@ -93,10 +91,21 @@ title {
   border-left: 2px solid white;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
+  align-content: center;
 }
 
 .disabled-button {
   /* inherited from a normal-button class  *
    * class="disabled-button normal-button" */
   color: gray;
+}
+
+.remember-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.remember-wrapper input {
+  width: initial;
+  margin-left: 16px;
 }

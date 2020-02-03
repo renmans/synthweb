@@ -69,4 +69,16 @@ def get_tasks(name):
         user_tasks = cursor.fetchall()
         return user_tasks
 
+def change_task_status(name, task_id):
+    user_id = get_user_id(name)
+    with sqlite3.connect('app.db') as connection:
+        cursor = connection.cursor()
+        cursor.execute('select * from tasks where user_id = ?', [user_id])
+        user_tasks = cursor.fetchall()
+        task_id = int(task_id.split('_')[-1]) - 1
+        global_id = user_tasks[task_id][0]
+        current_status = user_tasks[task_id][6]
+        cursor.execute('update tasks set status = ? where id = ?', [not current_status, global_id])
+        connection.commit()
+
 init_tables()

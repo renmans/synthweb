@@ -11,41 +11,73 @@
 <a href={{ url_for('login_user') }}>Log In</a>
 
 {% else %}
+
 <h2>Hello, {{ name }}!</h2>
 
-
+<div class='aligner'>
 {% for task in tasks %}
+<div class="fields" id={{ 'card_' + loop.index|string }}>
     <div class="card">
         <div class="card-img"></div>
         <p class="card-heading">{{ task[2] }}</p>
-        {% if task[2] %}
+        {% if task[3] %}
         <p class="card-style card-content">"{{ task[3] }}"</p>
         {% endif %}
         <p class="card-style card-start-date">Created on: {{ task[4] }}</p>
         {% if task[5] %}
         <p class="card-style card-end-date">Deadline: {{ task[5] }}</p>
+        {% else %}
+        <p class="card-style incomplete">&nbsp;</p>
         {% endif %}
+         {% if task[6] == 1 %}
+        <p class="card-style complete">Complete!</p>
+        {% elif task[6] == 0 %}
+        <p class="card-style incomplete">Incomplete</p>
+        {% endif %} 
         <div class="card-buttons">
-            <button class="disabled-button normal-button card-buttons card-style send">Change status</button>
-            <button class="disabled-button normal-button card-buttons card-style send">Change Details</button>
-            <button class="disabled-button normal-button card-buttons card-style send">Delete</button>
+            <button class="normal-button card-buttons card-style send complete-btn" 
+            onclick=change_status(event)>Change status</button>
+            <button class="disabled-button normal-button card-buttons card-style send edit-btn">Edit</button>
+            <button class="disabled-button normal-button card-buttons card-style send delete-btn">Delete</button>
         </div>
     </div>
+    </div>
 {% endfor %}
-
-<div class="form-post">
-<form method="POST">
+</div>
+<a onlick=showForm()>Add New Task</a>
+<!-- <div class="form-post"> -->
+<form method="POST" id='hid'>
+    <h2>New Task</h2>
+    <div class='fields'>
     <label>Title</label>
     <input type="text" name="title" maxlength="40" required>
     <label>Description</label>
     <input type="text" name="content">
-    <label>Done before</label>
+    <label>Deadline</label>
     <input type="date" class="date" name="end_date">
     <div class = "submit-btn">
         <input type="submit" class="default-button send submit-button" value="Add Task!">
     </div>
     <a href={{ url_for('logout') }}>Log Out</a>
-</form>
 </div>
+</form>
+<!-- </div> -->
 {% endif %}
+    <script>
+        function fetch_post(card_id) {
+            fetch('/change/' + card_id, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                data: JSON.stringify(card_id)
+            }).then(response => console.log(response));
+        }
+
+        function change_status(event) {
+            let card_id = event.target.parentNode.parentNode.parentNode.id;
+            fetch_post(card_id);
+        }
+        function showForm() {
+            let form = document.querySelector('form');
+            form.style.display = (form.style.display == 'none') ? 'block' : 'none';        }
+    </script>
 </body>

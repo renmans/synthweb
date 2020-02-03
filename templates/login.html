@@ -6,6 +6,8 @@
 </head>
 <body>
 <form method="POST">
+    <h2>Log In</h2>
+    <div class="fields">
     <div>
         <label>E-mail</label>
         <input type="email" name="email" required>
@@ -16,7 +18,7 @@
         <input type="password" name="pw" required>  
     </div>
     
-    <div>
+    <div class="remember-wrapper">
         <label>Remember Me</label>
         <input type="checkbox" name="remember">
     </div>
@@ -24,8 +26,7 @@
     <div>
         <input type="submit" class="default-button send submit-button" value="Send">
     </div>
-    
+    <a href={{ url_for('index') }}>Sign Up</a>
+</div>
 </form>
-
-<a href={{ url_for('index') }}>Sign Up</a>
 </body>

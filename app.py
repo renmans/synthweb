@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from db import add_user, login, get_user_id, add_task, get_tasks
+from db import add_user, login, get_user_id, add_task, get_tasks, change_task_status
 from sqlite3 import IntegrityError
 
 app = Flask(__name__)
@@ -53,5 +53,12 @@ def user_page(name):
 def logout():
     session.pop('user', None)
     return redirect(url_for('index'))
+
+@app.route('/change/<card_id>', methods=['GET', 'POST'])
+def change(card_id):
+    if request.method == 'POST':
+        username = request.headers['Referer'].split('/')[-1]
+        change_task_status(username, card_id)
+    return '200 OK'
 
 app.run(debug=True)
