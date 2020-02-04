@@ -12,13 +12,11 @@ def index():
         name = request.form['name']
         password = request.form['pw']
         password_check = request.form['pw_check']
-        print(email, name, password, password_check)
         try:
             add_user(name, email, password)
         except IntegrityError:
             return render_template('index.html', error='already_exists')
         session['user'] = name
-        print(session['user'], name)
         return redirect(url_for('user_page', name=name))
     return render_template('index.html', error='')
 
@@ -59,13 +57,14 @@ def change(card_id):
     if request.method == 'POST':
         username = request.headers['Referer'].split('/')[-1]
         change_task_status(username, card_id)
-    return '200 OK'
+    return 'OK'
 
 @app.route('/delete/<card_id>', methods=['GET', 'POST'])
 def delete(card_id):
     if request.method == 'POST':
         username = request.headers['Referer'].split('/')[-1]
         delete_task(username, card_id)
-    return '200 OK'
+    return 'OK'
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
