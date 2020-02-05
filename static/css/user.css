@@ -61,7 +61,7 @@ a {
     padding: 0px;
     padding-bottom: 0px;
     border: 3px solid black;
-   }
+}
 
 .aligner {
   display: flex;
@@ -74,8 +74,7 @@ a {
 .complete {
     color: rgb(76, 138, 76);
 }
+
 .incomplete {
     color: rgb(144, 27, 27);
 }
-
-
