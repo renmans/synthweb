@@ -109,3 +109,9 @@ title, script {
   width: initial;
   margin-left: 16px;
 }
+
+.header {
+  background-color: blue;
+  padding: 6px;
+  text-align: center;
+}

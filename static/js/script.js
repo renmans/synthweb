@@ -17,6 +17,6 @@ function delete_task(event) {
 }
 
 function showForm() {
-    let form = document.querySelector('form');
-    form.style.display = (form.style.display == 'none') ? 'block' : 'none';
+    let hide = document.getElementById('hid');
+    hide.style.display = (hide.style.display == 'none') ? 'block' : 'none';
 }

@@ -58,7 +58,7 @@ a {
     width: auto;
     margin: 0 auto;
     margin-top: 10px;
-    padding: 0px;
+    padding: 2px;
     padding-bottom: 0px;
     border: 3px solid black;
 }
@@ -77,4 +77,15 @@ a {
 
 .incomplete {
     color: rgb(144, 27, 27);
+}
+
+#hid {
+    width: auto;
+    display: block;
+}
+
+.header {
+    background-color: blue;
+    padding: 6px;
+    text-align: center;
 }

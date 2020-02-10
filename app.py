@@ -3,7 +3,7 @@ from db import add_user, login, get_user_id, add_task, get_tasks, change_task_st
 from sqlite3 import IntegrityError
 
 app = Flask(__name__)
-app.secret_key = 'iamiwhoami'
+app.secret_key = 'bDcZ9jp6mKAHdhGy'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -57,6 +57,7 @@ def change(card_id):
     if request.method == 'POST':
         username = request.headers['Referer'].split('/')[-1]
         change_task_status(username, card_id)
+        return redirect(url_for('user_page', name=username))
     return 'OK'
 
 @app.route('/delete/<card_id>', methods=['GET', 'POST'])
