@@ -1,0 +1,99 @@
+.card {
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    background-color: rgb(160, 160, 160);
+    width: auto;
+    border: 2px solid rgb(160, 160, 160);
+}
+
+.card-heading {
+    margin-top: 0;
+    text-align: center;
+    background-color: rgb(0, 0, 150);
+}
+
+.card-style {
+    text-align: center;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.date {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form {
+    text-align: center;
+    position: fixed;
+    top: 35%;
+    left: 41%;   
+} 
+
+.send{
+    background-color: rgb(170, 170, 170);
+    margin-top: 20px;
+}
+
+.submit-btn{
+    margin: 0 10px;
+    margin-bottom: 0px;
+}
+
+.submit-button{
+    padding: 5px 0;
+    margin: 0px;
+}
+
+a {
+    margin: 0px;
+    cursor: pointer;
+    background-color: rgb(173, 173, 173);
+    width: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid rgb(173, 173, 173);
+}
+
+.aligner {
+  display: flex;
+  width: 90%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ 
+.complete {
+    color: rgb(76, 138, 76);
+}
+
+.incomplete {
+    color: rgb(144, 27, 27);
+}
+
+#hid {
+    display: none;
+}
+
+.header {
+    background-color: blue;
+    padding: 6px;
+    text-align: center;
+    margin: 0;
+}
+
+#showForm {
+    position: fixed;
+    bottom: 1cm;
+    right: 1cm; 
+}
+
+#mover {
+    margin: 0;
+    padding: 0;
+}

@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-from db import add_user, login, get_user_id, add_task, get_tasks
+from db import add_user, login, get_user_id, add_task, get_tasks, change_task_status, delete_task
 from sqlite3 import IntegrityError
 
 app = Flask(__name__)
-app.secret_key = 'iamiwhoami'
+app.secret_key = 'bDcZ9jp6mKAHdhGy'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -12,13 +12,11 @@ def index():
         name = request.form['name']
         password = request.form['pw']
         password_check = request.form['pw_check']
-        print(email, name, password, password_check)
         try:
             add_user(name, email, password)
         except IntegrityError:
             return render_template('index.html', error='already_exists')
         session['user'] = name
-        print(session['user'], name)
         return redirect(url_for('user_page', name=name))
     return render_template('index.html', error='')
 
@@ -54,4 +52,20 @@ def logout():
     session.pop('user', None)
     return redirect(url_for('index'))
 
-app.run(debug=True)
+@app.route('/change/<card_id>', methods=['GET', 'POST'])
+def change(card_id):
+    if request.method == 'POST':
+        username = request.headers['Referer'].split('/')[-1]
+        change_task_status(username, card_id)
+        return redirect(url_for('user_page', name=username))
+    return 'OK'
+
+@app.route('/delete/<card_id>', methods=['GET', 'POST'])
+def delete(card_id):
+    if request.method == 'POST':
+        username = request.headers['Referer'].split('/')[-1]
+        delete_task(username, card_id)
+    return 'OK'
+
+if __name__ == '__main__':
+    app.run(debug=True)

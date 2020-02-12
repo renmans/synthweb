@@ -1,6 +1,7 @@
 <head>
-	<title>SynthWeb</title>
-    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "style.css") }}>
+    <title>SynthWeb</title>
+    <link rel="icon" href="../static/img/favicon1.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/style.css") }}>
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 </head>
@@ -10,7 +11,7 @@
     {% endif %}
 
     <form method="POST">
-        <h2>Sign Up!</h2>
+        <p class='header'>Sign Up!</p>
         <div class="fields">
             <label>E-mail</label>
             <input type="email" placeholder="enter email" name="email" required>
@@ -20,9 +21,8 @@
             <input type="password" placeholder="6+ symbols" name="pw" required>
             <label>Password</label>
             <input type="password" placeholder="enter password" name="pw_check" required>
-            <input type="submit" value="Send" id="send">
+            <input type="submit" value="Send" class="default-button" id="send">
         </div>
         <a href={{ url_for('login_user') }}>Already have account</a>
     </form>
-
 </body>
