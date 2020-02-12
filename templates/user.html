@@ -45,7 +45,7 @@
     </div>
 {% endfor %}
 </div>
-<a class='normal-button' id='showForm' onclick='showForm()'>Add New Task</a>
+<a class='normal-button' id='showForm' onclick=showForm()>Add New Task</a>
 <form method="POST" id='hid'>
     <div id='mover'>
         <p class='header'>New Task</p>
@@ -54,7 +54,7 @@
     <label>Title</label>
     <input type="text" name="title" maxlength="40" required>
     <label>Description</label>
-    <input type="text" name="content">
+    <input type="text" name="content" required>
     <label>Deadline</label>
     <input type="date" class="date" name="end_date">
     <div class = "submit-btn">
