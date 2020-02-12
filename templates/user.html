@@ -1,6 +1,6 @@
 <head>
     <title>SynthWeb - {{ name }}</title>
-    <link rel="icon" href="../static/img/favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/style.css") }}>
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/user.css") }}>
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
@@ -34,10 +34,10 @@
         <p class="card-style incomplete">Incomplete</p>
         {% endif %} 
         <div class="card-buttons">
-            <button class="normal-button card-buttons card-style send complete-btn" 
+            <button class="normal-button card-buttons card-style send" 
             onclick=change_status(event)>Change status</button>
-            <button class="disabled-button normal-button card-buttons card-style send edit-btn">Edit</button>
-            <button class="normal-button card-buttons card-style send delete-btn"
+            <button class="disabled-button normal-button card-buttons card-style send">Edit</button>
+            <button class="normal-button card-buttons card-style send"
             onclick=delete_task(event)>Delete</button>
         </div>
     </div>
