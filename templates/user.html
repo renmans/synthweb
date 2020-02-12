@@ -12,7 +12,7 @@
 <a href={{ url_for('login_user') }}>Log In</a>
 
 {% else %}  
-<p class='header'>Hello, {{ name }}!</p>
+<p class='header margin'>Hello, {{ name }}!</p>
 <div class='aligner'>
 {% for task in tasks %}
 <div class="fields" id={{ 'card_' + loop.index|string }}>
@@ -44,10 +44,11 @@
     </div>
 {% endfor %}
 </div>
-<a onclick='showForm()'>Add New Task</a>
-<!-- <div class="form-post"> -->
+<a class='normal-button' id='showForm' onclick='showForm()'>Add New Task</a>
 <form method="POST" id='hid'>
-    <p class='header'>New Task</p>
+    <div id='mover'>
+        <p class='header'>New Task</p>
+    </div>
     <div class='fields'>
     <label>Title</label>
     <input type="text" name="title" maxlength="40" required>
@@ -62,5 +63,6 @@
 </div>
 </form>
 {% endif %}
-    <script src="../static/js/script.js"></script>  
+    <script src="../static/js/script.js"></script> 
+    <script src="../static/js/drag.js"></script>  
 </body>

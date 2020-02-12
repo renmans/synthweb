@@ -18,5 +18,5 @@ function delete_task(event) {
 
 function showForm() {
     let hide = document.getElementById('hid');
-    hide.style.display = (hide.style.display == 'none') ? 'block' : 'none';
+    hide.style.display = (hide.style.display == 'block') ? 'none' : 'block';
 }

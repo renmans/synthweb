@@ -1,20 +1,16 @@
-p {
-    border: 0;
-}
-
 .card {
     margin: 0 auto;
     margin-top: 0;
     margin-bottom: 10px;
-    background-color: rgb(173, 173, 173);
+    background-color: rgb(160, 160, 160);
     width: auto;
-    border: 3px solid black;
+    border: 2px solid rgb(160, 160, 160);
 }
 
 .card-heading {
     margin-top: 0;
     text-align: center;
-    background-color: blue;
+    background-color: rgb(0, 0, 150);
 }
 
 .card-style {
@@ -33,7 +29,9 @@ p {
 
 form {
     text-align: center;
-    
+    position: fixed;
+    top: 35%;
+    left: 41%;   
 } 
 
 .send{
@@ -58,9 +56,8 @@ a {
     width: auto;
     margin: 0 auto;
     margin-top: 10px;
-    padding: 2px;
-    padding-bottom: 0px;
-    border: 3px solid black;
+    padding: 5px;
+    border: 2px solid rgb(173, 173, 173);
 }
 
 .aligner {
@@ -80,12 +77,23 @@ a {
 }
 
 #hid {
-    width: auto;
-    display: block;
+    display: none;
 }
 
 .header {
     background-color: blue;
     padding: 6px;
     text-align: center;
+    margin: 0;
+}
+
+#showForm {
+    position: fixed;
+    bottom: 1cm;
+    right: 1cm; 
+}
+
+#mover {
+    margin: 0;
+    padding: 0;
 }
