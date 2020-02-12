@@ -1,10 +1,11 @@
 <head>
     <title>SynthWeb - {{ name }}</title>
-    <link rel="icon" href="../static/img/favicon1.ico" type="image/x-icon">
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/style.css") }}>
     <link rel="stylesheet" type="text/css" href={{ url_for("static", filename = "css/user.css") }}>
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
 </head>
 <body>
 {% if name != session['user'] %}
@@ -26,12 +27,12 @@
         {% if task[5] %}
         <p class="card-style card-end-date">Deadline: {{ task[5] }}</p>
         {% else %}
-        <p class="card-style incomplete">&nbsp;</p>
+        <p class="card-style">&nbsp;</p>
         {% endif %}
          {% if task[6] == 1 %}
-        <p class="card-style complete">Complete!</p>
+        <p class="card-style status-on">Complete!</p>
         {% elif task[6] == 0 %}
-        <p class="card-style incomplete">Incomplete</p>
+        <p class="card-style status-off">Incomplete</p>
         {% endif %} 
         <div class="card-buttons">
             <button class="normal-button card-buttons card-style send complete-btn" 
@@ -63,6 +64,6 @@
 </div>
 </form>
 {% endif %}
-    <script src="../static/js/script.js"></script> 
-    <script src="../static/js/drag.js"></script>  
+    <script src="../static/js/buttons.js"></script> 
+    <script src="../static/js/drag.js"></script>
 </body>
