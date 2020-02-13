@@ -21,7 +21,7 @@ form {
   margin-top: 10px;
   padding: 0px;
   padding-bottom: 0px;
-  border: 2px solid rgb(173, 173, 173);
+  border: 2px solid rgb(200, 200, 200);
 }
 
 .fields {
@@ -73,8 +73,8 @@ head * {
 .normal-button {
   background-color: rgb(170, 170, 170);
   margin-bottom: 2px;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
+  border-top: 2px solid rgb(200, 200, 200);
+  border-left: 2px solid rgb(200, 200, 200);
   border-bottom: 2px solid black;
   border-right: 2px solid black;
   align-content: center;

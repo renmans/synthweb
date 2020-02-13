@@ -13,7 +13,11 @@
 <a href={{ url_for('login_user') }}>Log In</a>
 
 {% else %}  
-<p class='header margin'>Hello, {{ name }}!</p>
+<p class='header margin'>Hello, {{ name }}!   
+        <div class='close log_out'>  
+            <a href={{ url_for('logout') }} class='a_log_out'></a>   
+        </div>
+</p>
 <div class='aligner'>
 {% for task in tasks %}
 <div class="fields" id={{ 'card_' + loop.index|string }}>
@@ -47,9 +51,9 @@
 </div>
 <a class='normal-button' id='showForm' onclick=showForm()>Add New Task</a>
 <form method="POST" id='hid'>
-    <div id='mover'>
-        <p class='header'>New Task</p>
-    </div>
+    <div id='mover'>       
+        <p class='header'>New Task<div class='close' onclick=showForm()></div></p>
+    </div>    
     <div class='fields'>
     <label>Title</label>
     <input type="text" name="title" maxlength="40" required>
@@ -60,7 +64,6 @@
     <div class = "submit-btn">
         <input type="submit" class="default-button send submit-button" value="Add Task!">
     </div>
-    <a href={{ url_for('logout') }}>Log Out</a>
 </div>
 </form>
 {% endif %}
