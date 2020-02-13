@@ -9,6 +9,10 @@ app.secret_key = 'bDcZ9jp6mKAHdhGy'
 def page_not_found(error):
     return render_template('error.html', error=error), 404
 
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('error.html', error=error), 500
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
