@@ -1,0 +1,27 @@
+* {
+  font-family: "Orbitron", sans-serif;
+  font-family: "Press Start 2P", cursive;
+}
+
+body {
+    background-color: darkblue;
+}
+
+.headline {
+    text-align: center;
+    margin: 15% 25% 0 25%;
+    background-color: gray;
+}
+
+.headline h1 {
+    color: darkblue;
+}
+
+.description {
+    margin: 5% 20% 10% 20%;
+    text-align: center;
+}
+
+p {
+    color: white;
+}

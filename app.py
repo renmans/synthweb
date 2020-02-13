@@ -5,6 +5,10 @@ from sqlite3 import IntegrityError
 app = Flask(__name__)
 app.secret_key = 'bDcZ9jp6mKAHdhGy'
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('error.html', error=error), 404
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
