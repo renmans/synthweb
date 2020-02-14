@@ -34,14 +34,9 @@ form {
     left: 41%;   
 } 
 
-.send{
+.send {
     background-color: rgb(173, 173, 173);
     margin-top: 20px;
-}
-
-.submit-btn{
-    margin: 0 10px;
-    margin-bottom: 0px;
 }
 
 .submit-button{
@@ -97,7 +92,7 @@ form {
     border-left: 1.5px solid rgb(200, 200, 200);
     border-bottom: 1.5px solid black;
     border-right: 1.5px solid black;
-    background: url('../img/close.jpg');
+    background: url('../img/close.svg');
     background-repeat: no-repeat;
     background-size: 90%; 
     background-color: rgb(200, 200, 200);
@@ -107,7 +102,8 @@ form {
 
 .log_out {
     height: 20px;
-    width: 20px; 
+    width: 20px;
+    top: 3px; 
 }
 
 .a_log_out {
@@ -116,3 +112,22 @@ form {
     margin: 0;
 }
 
+.a_log_out:hover::after { 
+    content: attr(data-title);
+    position: absolute;
+    right: 1px;
+    top: 22px;
+    display: block;
+    background-color: rgb(173, 173, 173);
+    padding: 2px;
+    width: 70px;
+    font-size: 10px;
+    color: black;
+}
+
+progress {
+    background-color: #ecececd3;
+    border: 1px rgba(240, 240, 240, 0.863) solid;
+    width: 80%;
+    height: 18px;
+  }

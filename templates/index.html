@@ -7,7 +7,7 @@
 </head>
 <body>
     {% if error == 'already_exists' %}
-    <p>Sorry, seems like this account is already exists</p>
+    <p class='err'>Sorry, seems like this account already exists</p>
     {% endif %}
 
     <form method="POST">
@@ -21,6 +21,6 @@
             <input type="password" name="pw" required>
             <input type="submit" value="Send" class="default-button" id="send">
         </div>
-        <a href={{ url_for('login_user') }}>Already have account</a>
+        <a href={{ url_for('login_user') }}>Already have an account</a>
     </form>
 </body>

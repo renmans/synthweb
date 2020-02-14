@@ -9,25 +9,16 @@
 <form method="POST">
     <p class='header'>Log In</p>
     <div class="fields">
-    <div>
         <label>E-mail</label>
         <input type="email" name="email" required>
-    </div>
-    
-    <div>
         <label>Password</label>
-        <input type="password" name="pw" required>  
-    </div>
-    
-    <div class="remember-wrapper">
-        <label>Remember Me</label>
-        <input type="checkbox" name="remember">
-    </div>
-
-    <div>
-        <input type="submit" class="default-button send submit-button" value="Send">
+        <input type="password" name="pw" required>
+        <div class="remember-wrapper">
+            <label>Remember Me</label>
+            <input type="checkbox" name="remember">
+        </div>
+        <input type="submit" value="Send" class="default-button send submit-button">
     </div>
     <a href={{ url_for('index') }}>Sign Up</a>
-</div>
 </form>
 </body>

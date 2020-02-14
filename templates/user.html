@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
 </head>
-<body>
+<body> 
 {% if name != session['user'] %}
 <p>Account name doesn't match to your cookie. Please Log In again</p>
 <a href={{ url_for('login_user') }}>Log In</a>
@@ -15,7 +15,7 @@
 {% else %}  
 <p class='header margin'>Hello, {{ name }}!   
         <div class='close log_out'>  
-            <a href={{ url_for('logout') }} class='a_log_out'></a>   
+            <a href={{ url_for('logout') }} class='a_log_out' data-title='Log Out'></a>   
         </div>
 </p>
 <div class='aligner'>
@@ -38,6 +38,7 @@
         {% elif task[6] == 0 %}
         <p class="card-style status-off">Incomplete</p>
         {% endif %} 
+        <progress value="0" max="100" class="aligner" id="progressbar"></progress> <!-- добавление прогресс бара -->
         <div class="card-buttons">
             <button class="normal-button card-buttons card-style send" 
             onclick=change_status(event)>Change status</button>
@@ -61,12 +62,13 @@
     <input type="text" name="content" required>
     <label>Deadline</label>
     <input type="date" class="date" name="end_date">
-    <div class = "submit-btn">
+    <div class = "submit-button">
         <input type="submit" class="default-button send submit-button" value="Add Task!">
     </div>
 </div>
 </form>
 {% endif %}
+    <script src="../static/js/progress_bar.js"></script>
     <script src="../static/js/buttons.js"></script> 
     <script src="../static/js/drag.js"></script>
 </body>

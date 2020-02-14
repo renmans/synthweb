@@ -94,10 +94,21 @@ head * {
 .remember-wrapper input {
   width: initial;
   margin-left: 16px;
+  margin-top: 7px;
 }
 
 .header {
   background-color: blue;
   padding: 6px;
   text-align: center;
+}
+
+.err {
+  text-align: center;
+  color: red;
+  font-size: 0.5cm;
+  background-color: rgb(173, 173, 173);
+  padding: 5px;
+  width: fit-content;
+  margin: 0 auto;
 }
