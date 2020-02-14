@@ -38,6 +38,7 @@
         {% elif task[6] == 0 %}
         <p class="card-style status-off">Incomplete</p>
         {% endif %} 
+        <progress value="0" max="100" class="aligner" id="progressbar"></progress> <!-- добавление прогресс бара -->
         <div class="card-buttons">
             <button class="normal-button card-buttons card-style send" 
             onclick=change_status(event)>Change status</button>
@@ -67,6 +68,7 @@
 </div>
 </form>
 {% endif %}
+    <script src="../static/js/progress_bar.js"></script>
     <script src="../static/js/buttons.js"></script> 
     <script src="../static/js/drag.js"></script>
 </body>

@@ -124,3 +124,10 @@ form {
     font-size: 10px;
     color: black;
 }
+
+progress {
+    background-color: #ecececd3;
+    border: 1px rgba(240, 240, 240, 0.863) solid;
+    width: 80%;
+    height: 18px;
+  }
