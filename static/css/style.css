@@ -40,14 +40,21 @@ input {
   margin: 0px;
 }
 
+input[type='submit'] {
+  cursor: url('../img/cursor.cur'), auto;
+}
+
 a {
   color: red;
+  margin: auto; 
   margin-top: 15px;
   font-size: 10px;
   text-decoration: none;
   margin-bottom: 10px;
   padding: 6px;
   text-align: center;
+  cursor: url('../img/cursor.cur'), auto;
+  width: fit-content;  
 }
 
 #send {

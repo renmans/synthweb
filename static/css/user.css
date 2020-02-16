@@ -74,7 +74,8 @@ form {
 #showForm {
     position: fixed;
     bottom: 1cm;
-    right: 1cm; 
+    right: 1cm;
+    cursor: url('../img/cursor.cur'), auto; 
 }
 
 #mover {
@@ -98,6 +99,7 @@ form {
     background-color: rgb(200, 200, 200);
     background-position-x: center;
     background-position-y: center;
+    cursor: url('../img/cursor.cur'), auto; 
 }
 
 .log_out {
@@ -110,6 +112,7 @@ form {
     width: 10px;
     height: 10px;
     margin: 0;
+    cursor: url('../img/cursor.cur'), auto;   
 }
 
 .a_log_out:hover::after { 
@@ -125,9 +128,9 @@ form {
     color: black;
 }
 
-progress {
+/* progress {
     background-color: #ecececd3;
     border: 1px rgba(240, 240, 240, 0.863) solid;
     width: 80%;
     height: 18px;
-  }
+  } */
