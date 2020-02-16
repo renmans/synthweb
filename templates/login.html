@@ -6,6 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron|Press+Start+2P&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 </head>
 <body>
+{% if error == 'authentication_error' %}
+<p class='err'>Incorrect username or password.</p>
+{% endif %}
 <form method="POST">
     <p class='header'>Log In</p>
     <div class="fields">

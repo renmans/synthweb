@@ -40,7 +40,7 @@ def login_user():
             session['user'] = username[0]
             return redirect(url_for('user_page', name=username[0]))
         else:
-            return redirect(url_for('login_user'))
+            return render_template('login.html', error='authentication_error')
 
 
 @app.route('/users/<name>', methods=['GET', 'POST'])
