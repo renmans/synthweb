@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from db import add_user, login, get_user_id, add_task, get_tasks, change_task_status, delete_task
 from sqlite3 import IntegrityError
+import hashlib
 
 app = Flask(__name__)
 app.secret_key = 'bDcZ9jp6mKAHdhGy'
@@ -35,7 +36,9 @@ def login_user():
         email = request.form['email']
         password = request.form['pw']
         # remember = request.form['remember']
-        username = login(email, password)
+        passwd_hash = hashlib.sha512()
+        passwd_hash.update(password.encode('utf-8'))
+        username = login(email, passwd_hash.hexdigest())
         if username:
             session['user'] = username[0]
             return redirect(url_for('user_page', name=username[0]))

@@ -24,6 +24,13 @@ def init_tables():
         status boolean default 0
         )''')
 
+    # cursor.execute(f'''CREATE TABLE IF NOT EXISTS subtasks (
+    #     id integer primary key,
+    #     task_id integer not null,
+    #     content varchar(?) not null,
+    #     status boolean default 0
+    # )''')
+
     connection.close()
 
 def db_connection(func):
@@ -78,9 +85,10 @@ def change_task_status(name, task_id, **kwargs):
     cursor = kwargs["cursor"]
     cursor.execute('select * from tasks where user_id = ?', [user_id])
     user_tasks = cursor.fetchall()
-    task_id = int(task_id.split('_')[-1]) - 1
+    task_id = int(task_id.split('_')[-1]) - 1  # card_id
     global_id = user_tasks[task_id][0]
     current_status = user_tasks[task_id][6]
+    print(f'user_tasks: {user_tasks}\ntask_id: {task_id}\nglobal_id: {global_id}')
     cursor.execute('update tasks set status = ? where id = ?', 
         [not current_status, global_id])
 
