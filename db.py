@@ -50,7 +50,6 @@ def add_user(username, email, password, **kwargs):
     cursor.execute('select * from users')
 
 def login(email, password):
-    print(password)
     with sqlite3.connect('app.db') as connection:
         cursor = connection.cursor()
         cursor.execute('select username from users where email = ? and password = ?', 
