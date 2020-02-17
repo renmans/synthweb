@@ -47,7 +47,6 @@ def add_user(username, email, password, **kwargs):
     cursor = kwargs["cursor"]
     cursor.execute('''insert into users (username, password, email) 
                    values (?, ?, ?)''', [username, password, email])
-    cursor.execute('select * from users')
 
 def login(email, password):
     with sqlite3.connect('app.db') as connection:
@@ -69,7 +68,6 @@ def add_task(user_id, title, content, end_date, **kwargs):
     cursor = kwargs["cursor"]
     cursor.execute('''insert into tasks (user_id, title, content, end_date) 
                     values (?, ?, ?, ?)''', [user_id, title, content, end_date])
-    cursor.execute('select * from tasks')
 
 def get_tasks(name):
     user_id = get_user_id(name)

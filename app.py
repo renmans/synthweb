@@ -6,6 +6,11 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = 'bDcZ9jp6mKAHdhGy'
 
+def hashing(password):
+    passwd_hash = hashlib.sha512()
+    passwd_hash.update(password.encode('utf-8'))
+    return passwd_hash.hexdigest()
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('error.html', error=error), 404
@@ -21,7 +26,7 @@ def index():
         name = request.form['name']
         password = request.form['pw']
         try:
-            add_user(name, email, password)
+            add_user(name, email, hashing(password))
         except IntegrityError:
             return render_template('index.html', error='already_exists')
         session['user'] = name
@@ -36,9 +41,7 @@ def login_user():
         email = request.form['email']
         password = request.form['pw']
         # remember = request.form['remember']
-        passwd_hash = hashlib.sha512()
-        passwd_hash.update(password.encode('utf-8'))
-        username = login(email, passwd_hash.hexdigest())
+        username = login(email, hashing(password))
         if username:
             session['user'] = username[0]
             return redirect(url_for('user_page', name=username[0]))
