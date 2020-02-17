@@ -33,12 +33,12 @@
         {% else %}
         <p class="card-style">&nbsp;</p>
         {% endif %}
-         {% if task[6] == 1 %}
-        <p class="card-style status-on">Complete!</p>
+        {% if task[6] == 1 %}
+        <p class="card-style status status-on">Complete!</p>
         {% elif task[6] == 0 %}
-        <p class="card-style status-off">Incomplete</p>
-        {% endif %} 
-        <!-- <progress value="0" max="100" class="aligner" id="progressbar"></progress> добавление прогресс бара -->
+        <p class="card-style status status-off">Incomplete</p>
+        {% endif %}
+        <!-- <progress value="0" max="100" class="aligner" id="progressbar"></progress> -->
         <div class="card-buttons">
             <button class="normal-button card-buttons card-style send" 
             onclick=change_status(event)>Change status</button>
@@ -47,7 +47,7 @@
             onclick=delete_task(event)>Delete</button>
         </div>
     </div>
-    </div>
+</div>
 {% endfor %}
 </div>
 <a class='normal-button' id='showForm' onclick=showForm()>Add New Task</a>

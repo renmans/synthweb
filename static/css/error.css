@@ -26,3 +26,8 @@ body {
 p {
     color: white;
 }
+
+a {
+    text-decoration: none;
+    color: darkblue;
+}

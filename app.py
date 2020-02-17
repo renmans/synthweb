@@ -9,6 +9,10 @@ app.secret_key = 'bDcZ9jp6mKAHdhGy'
 def page_not_found(error):
     return render_template('error.html', error=error), 404
 
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('error.html', error=error), 500
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -36,7 +40,7 @@ def login_user():
             session['user'] = username[0]
             return redirect(url_for('user_page', name=username[0]))
         else:
-            return redirect(url_for('login_user'))
+            return render_template('login.html', error='authentication_error')
 
 
 @app.route('/users/<name>', methods=['GET', 'POST'])
