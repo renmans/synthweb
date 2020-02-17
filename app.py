@@ -40,14 +40,12 @@ def login_user():
     else:
         email = request.form['email']
         password = request.form['pw']
-        # remember = request.form['remember']
         username = login(email, hashing(password))
         if username:
             session['user'] = username[0]
             return redirect(url_for('user_page', name=username[0]))
         else:
             return render_template('login.html', error='authentication_error')
-
 
 @app.route('/users/<name>', methods=['GET', 'POST'])
 def user_page(name):

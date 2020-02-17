@@ -9,7 +9,7 @@
 </head>
 <body> 
 {% if name != session['user'] %}
-<p>Account name doesn't match to your cookie. Please Log In again</p>
+<p class='err'>Account name doesn't match to your cookie. Please Log In again</p>
 <a href={{ url_for('login_user') }}>Log In</a>
 
 {% else %}  
@@ -38,7 +38,6 @@
         {% elif task[6] == 0 %}
         <p class="card-style status status-off">Incomplete</p>
         {% endif %}
-        <!-- <progress value="0" max="100" class="aligner" id="progressbar"></progress> -->
         <div class="card-buttons">
             <button class="normal-button card-buttons card-style send" 
             onclick=change_status(event)>Change status</button>
@@ -68,7 +67,6 @@
 </div>
 </form>
 {% endif %}
-    <!-- <script src="../static/js/progress_bar.js"></script> -->
     <script src="../static/js/buttons.js"></script> 
     <script src="../static/js/drag.js"></script>
 </body>

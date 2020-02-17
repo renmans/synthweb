@@ -24,13 +24,6 @@ def init_tables():
         status boolean default 0
         )''')
 
-    # cursor.execute(f'''CREATE TABLE IF NOT EXISTS subtasks (
-    #     id integer primary key,
-    #     task_id integer not null,
-    #     content varchar(?) not null,
-    #     status boolean default 0
-    # )''')
-
     connection.close()
 
 def db_connection(func):
