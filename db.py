@@ -10,7 +10,7 @@ def init_tables():
     cursor.execute(f'''CREATE TABLE IF NOT EXISTS users (
         id integer primary key,
         username varchar(20) unique not null,
-        password varchar(50) not null,
+        password varchar(128) not null,
         email varchar(40) unique not null
         )''')
 
@@ -50,6 +50,7 @@ def add_user(username, email, password, **kwargs):
     cursor.execute('select * from users')
 
 def login(email, password):
+    print(password)
     with sqlite3.connect('app.db') as connection:
         cursor = connection.cursor()
         cursor.execute('select username from users where email = ? and password = ?', 
